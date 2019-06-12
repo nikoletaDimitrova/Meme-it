@@ -1,0 +1,28 @@
+<html>
+<button (click)="navigateHome()" class="btn btn-primary"><mat-icon>home</mat-icon> Home</button>
+<div class = "container" id="dropdown">
+  <h3>Search domains of fellow memesters:</h3>
+<select  [(ngModel)]="currentDomain" (ngModelChange)="refreshMemes()">
+  <option *ngFor="let domain of domains" value="{{domain.address}}">{{domain.name}}</option>
+</select>
+</div>
+  <br>
+<div *ngIf="memes">
+  <form (ngSubmit)="searchByDescription()">
+    <input type="text" placeholder="Search.." [(ngModel)]="searchDescription" name="searchDescription">
+    <button type="submit" class = "btn btn-primary">Search</button>
+    <form  (ngSubmit)="refreshMemes()">
+      <button type = "submit" *ngIf="searchDescription" class="btn btn-dark">Clear</button>
+    </form>
+  </form>
+</div>
+  <div>
+    <mat-card class="card-picture" *ngFor="let meme of memes">
+      <p *ngIf = "searchDescription !== meme.description && searchDescription">Did you mean {{meme.description}}?</p>
+    <figure>
+    <img [src]=currentDomain+meme.pictureUrl width=400>
+      <mat-card-title class="text-center my-3" >{{meme.description}}</mat-card-title>
+  </figure>
+    </mat-card>
+  </div>
+</html>

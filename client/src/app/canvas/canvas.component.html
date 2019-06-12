@@ -1,0 +1,37 @@
+<h1>Create Custom Meme</h1>
+Select how many cols and rows your meme will be:
+<div class="divider"></div>
+<label>
+  <form #fileForm = "ngForm" (ngSubmit)="updateArrays()">
+  <h6>Rows</h6>
+ <input type ="number" [(ngModel)]="rows" name="rows" >
+<h6>Cols</h6>
+  <input type = "number" [(ngModel)]="cols" name="cols">
+    <button type="submit" class = "btn btn-success">Create</button>
+  </form>
+
+</label>
+<div *ngIf="rows && cols" >
+<form *ngFor="let m of i" >
+  <form *ngFor="let k of j">
+    <form #fileForm = "ngForm" (ngSubmit)="paintCanvas()">
+  <input #textInput type="text"  class="form-control" (change)="insertText(textInput.value)">
+  <br>
+  <label class="image-upload-container btn btn-bwm">
+    <span>Select Image</span>
+    <input #fileInput
+           type="file"
+           accept="image/*"
+           (change)="catchFile(fileInput)">
+  </label>
+    <button type="submit" class="btn btn-dark">Put</button>
+    </form>
+</form>
+</form>
+</div>
+
+<body>
+<p><button (click)="paintCanvas()">Load</button></p>
+<canvas id="canvas" width="600" height="512" style="border:1px solid #cc00d3;">
+</canvas>
+</body>

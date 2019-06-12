@@ -1,0 +1,60 @@
+<div id="header">
+  <header>
+<a id="logo">Meme IT</a>
+    <h1 id="subheading">CODE EDITION</h1>
+  </header>
+</div>
+<body>
+<div>
+<form (ngSubmit)="searchByDescription(searchDescription)">
+  <input type="text" placeholder="Search.." [(ngModel)]="searchDescription" name="searchDescription">
+  <button type="submit" class = "btn btn-primary">Search</button>
+  <form (ngSubmit)="refreshImages()">
+  <button type = "submit" *ngIf="searchDescription" class="btn btn-dark">Clear</button>
+</form>
+</form>
+</div>
+
+<div class="pagination">
+  <p>Page size:</p>
+<label>
+  <select [(ngModel)]="selectedSize">
+    <option value="1">1</option>
+    <option value="3">3</option>
+    <option value="10">8</option>
+    <option value="15">10</option>
+  </select>
+</label>
+</div>
+
+<div class="divider"></div>
+
+<div class="container">
+<button (click)="createMeme()"class="btn btn-success">Create Meme</button>
+<div class="divider"></div>
+<button (click)="explore()"class="btn btn-success">Explore</button>
+</div>
+
+<div class="divider"></div>
+
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="1%" fxLayoutAlign="center">
+<!--    <div *ngFor="let meme of memes  | paginate: { itemsPerPage: selectedSize, currentPage: p }" >-->
+  <mat-card class="card-picture" *ngFor="let meme of memes  | paginate: { itemsPerPage: selectedSize, currentPage: p }">
+  <figure class="item">
+          <img  mat-card-image class ="img" *ngIf=!getUrl(meme.pictureUrl) [src]=serverUrl width=200>
+          <mat-card-title class="text-center my-3"> {{meme.description}}</mat-card-title>
+          <mat-card-subtitle class="text-center my-3"> <mat-icon>calendar_today</mat-icon> {{meme.datePosted | date}}</mat-card-subtitle>
+<!--        <button (click)="deleteMeme(meme.id)"class="btn btn-danger">Delete</button>-->
+    <mat-card-actions align="end">
+    <mat-icon (click)="deleteMeme(meme.id)">delete</mat-icon>
+    <div class="divider"></div>
+<!--          <button type="button" class="btn btn-warning pull-right" (click)="editMeme(meme.id);">Edit</button>-->
+    <mat-icon (click)="editMeme(meme.id)">mode_edit</mat-icon>
+    </mat-card-actions>
+  </figure>
+    </mat-card>
+</div>
+    <pagination-controls class="myPagination"
+                         (pageChange)="p = $event">
+    </pagination-controls>
+</body>

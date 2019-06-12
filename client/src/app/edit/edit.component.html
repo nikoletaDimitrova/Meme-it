@@ -1,0 +1,16 @@
+
+<label>Description:</label>
+<form  #fileForm = "ngForm" (ngSubmit)="editMeme(meme.id)">
+  <input type="text" [(ngModel)]="description" class="form-control" name="description">
+  <br>
+  <img *ngIf=!getUrl() [src]=serverUrl width=400>
+  <label class="image-upload-container btn btn-bwm">
+    <span>Change Image</span>
+    <input #fileInput
+           type="file"
+           accept="image/*"
+           (change)="catchFile(fileInput)">
+    </label>
+    <br>
+    <button type="submit" class = "btn btn-success">Save</button>
+</form>

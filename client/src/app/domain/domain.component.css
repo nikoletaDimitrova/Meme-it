@@ -1,0 +1,28 @@
+
+mat-card-title, mat-card-subtitle{
+  font-family: 'Open Sans', sans-serif;
+  color: gray();
+  font-size: 20px;
+  font-weight: 700;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+.images{
+  display:inline-block;
+  width:100%;
+  /*height:133px;*/
+  overflow:hidden;
+  vertical-align:top;
+}
+html{
+  background-color: #d0b1d3;
+  background-size: cover;
+  height: 100%;
+}
+#dropdown{
+  margin-top: 50px;
+}
+p{
+  color: orangered;
+  font-family: 'Open Sans', sans-serif;
+}

@@ -1,0 +1,15 @@
+
+  <label>Description:</label>
+  <form  #fileForm = "ngForm" (ngSubmit)="doUpload()">
+  <input type="text" [(ngModel)]="description" class="form-control" name="description" required="required">
+  <br>
+  <label class="image-upload-container btn btn-bwm">
+    <span>Select Image</span>
+    <input #fileInput
+           type="file"
+           accept="image/*"
+           (change)="catchFile(fileInput)">
+    <br>
+<button type="submit" class = "btn btn-success">Save</button>
+  </label>
+</form>

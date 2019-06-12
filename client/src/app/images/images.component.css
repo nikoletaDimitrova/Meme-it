@@ -1,0 +1,62 @@
+@import url(https://fonts.googleapis.com/css?family=Squada+One);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300); /*container { display: inline-block }*/
+.divider{
+  width:5px;
+  height:auto;
+  display:inline-block;
+}
+.pagination {
+  color: black;
+  float: right;
+  margin: 10px;
+  text-decoration: none;
+}
+.images{
+  display:inline-block;
+  width:100%;
+  /*height:133px;*/
+  overflow:hidden;
+  vertical-align:top;
+}
+header{
+  padding: 20px 80px;
+  background: #eee url(https://mondrian.mashable.com/uploads%252Fcard%252Fimage%252F952345%252F700b8135-49c3-4f92-b4df-f2e07341ccb6.jpg%252F950x534__filters%253Aquality%252890%2529.jpg?signature=_s8cVSwfaOjhhEhBiKA7Acic6z0=&source=https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com);
+  background-size: cover;
+}
+#logo {
+  font-family: 'Open Sans', sans-serif;
+  color: orangered;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 150px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1;
+  text-shadow: #EDEDED 3px 2px 0;
+  position: relative;
+}
+body{
+  background: #efefef url(https://images.wallpaperscraft.com/image/gray_texture_surface_roughness_69532_3840x2160.jpg);
+  background-size: cover;
+  height: 100%;
+}
+#subheading{
+  font-family: 'Open Sans', sans-serif;
+  color: orangered;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: -3px;
+  line-height: 1;
+  text-shadow: #EDEDED 3px 2px 0;
+  position: relative;
+}
+mat-card-title, mat-card-subtitle{
+  font-family: 'Open Sans', sans-serif;
+  color: orangered;
+  font-size: 20px;
+  font-weight: 700;
+  border: 1px solid black;
+  border-radius: 8px;
+}

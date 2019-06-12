@@ -1,0 +1,10 @@
+.divider{
+  width:5px;
+  height:auto;
+  display:inline-block;
+}
+canvas{
+  margin-left: 20px;
+  width: 600px;
+  height: 512px
+}
